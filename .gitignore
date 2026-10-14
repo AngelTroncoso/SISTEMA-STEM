@@ -1,0 +1,29 @@
+# Archivos de entorno y secretos
+.env
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Entornos virtuales
+.venv/
+venv/
+ENV/
+env/
+
+# Datos generados
+sample_data.csv
+
+# Sistema
+.DS_Store
+.kiro/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
