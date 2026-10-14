@@ -1,27 +1,39 @@
-# 🔬 Analista Multiagente STEM
+# 🔬 SISTEMA-STEM · Analista Multiagente
 
-Sistema de análisis de datos con 4 agentes especializados que evalúan datasets desde perspectivas complementarias: Tecnología, Matemáticas, Ciencia e Ingeniería.
+Sistema de análisis de datos con **interfaz futurista** y **4 agentes especializados** que evalúan datasets desde perspectivas complementarias: Ciencia, Tecnología, Ingeniería y Matemáticas.
 
-## Instalación
+## ⚡ Instalación
 
 ```bash
 pip install -r requirements.txt
 python generate_sample.py
+python generate_assets.py
 ```
 
-## Uso
+## 🎨 Características
+
+- **UI Futurista**: Tema cyberpunk con glassmorphism, degradados neón y animaciones suaves
+- **Agente Ciencia**: Formula y contrasta hipótesis científicas con tests estadísticos
+- **Agente Tecnología**: Evalúa calidad técnica, detecta nulos, duplicados y outliers
+- **Agente Matemáticas**: Estadística descriptiva, correlaciones, normalidad, ANOVA
+- **Agente Ingeniería**: Limpieza automática, modelo ML baseline y feature importance
+- **IA Generativa**: Integración opcional con **Gemini 3** para resúmenes mejorados
+
+## 🔑 Variables de Entorno (Opcional)
+
+Crea un archivo `.env` para usar IA:
+
+```
+GEMINI_API_KEY=tu_clave_aqui
+GEMINI_MODEL=gemini-3-flash-preview
+```
+
+Alternativamente, ingresa la API key en la barra lateral.
+
+## 🚀 Uso
 
 ```bash
 streamlit run app.py
 ```
 
-## Características
-
-- **Agente Tecnología**: calidad de datos, nulos, duplicados, tipos de dato
-- **Agente Matemáticas**: estadística descriptiva, correlaciones, outliers, tests de normalidad
-- **Agente Ciencia**: formulación y contraste de hipótesis con tests estadísticos
-- **Agente Ingeniería**: limpieza automática, modelo ML baseline, feature importance
-
-## Opcional: IA
-
-Configura `GEMINI_API_KEY` en `.env` o en la barra lateral para mejorar resúmenes con IA generativa.
+Sube un archivo CSV/Excel o prueba con datos de ejemplo.

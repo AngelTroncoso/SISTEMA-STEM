@@ -1,0 +1,50 @@
+<svg width="100%" height="200" viewBox="0 0 1200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00E5FF;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FF2BD6;stop-opacity:0.8" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Rejilla de fondo -->
+  <g opacity="0.1">
+    <line x1="0" y1="50" x2="1200" y2="50" stroke="#00E5FF" stroke-width="0.5"/>
+    <line x1="0" y1="100" x2="1200" y2="100" stroke="#00E5FF" stroke-width="0.5"/>
+    <line x1="0" y1="150" x2="1200" y2="150" stroke="#00E5FF" stroke-width="0.5"/>
+    <line x1="200" y1="0" x2="200" y2="200" stroke="#00E5FF" stroke-width="0.5"/>
+    <line x1="400" y1="0" x2="400" y2="200" stroke="#00E5FF" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="200" stroke="#00E5FF" stroke-width="0.5"/>
+    <line x1="800" y1="0" x2="800" y2="200" stroke="#00E5FF" stroke-width="0.5"/>
+    <line x1="1000" y1="0" x2="1000" y2="200" stroke="#00E5FF" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Red neuronal -->
+  <g filter="url(#glow)">
+    <!-- Conexiones -->
+    <line x1="150" y1="100" x2="350" y2="60" stroke="url(#heroGrad)" stroke-width="2" opacity="0.6"/>
+    <line x1="150" y1="100" x2="350" y2="140" stroke="url(#heroGrad)" stroke-width="2" opacity="0.6"/>
+    <line x1="350" y1="60" x2="600" y2="100" stroke="url(#heroGrad)" stroke-width="2" opacity="0.6"/>
+    <line x1="350" y1="140" x2="600" y2="100" stroke="url(#heroGrad)" stroke-width="2" opacity="0.6"/>
+    <line x1="600" y1="100" x2="850" y2="60" stroke="url(#heroGrad)" stroke-width="2" opacity="0.6"/>
+    <line x1="600" y1="100" x2="850" y2="140" stroke="url(#heroGrad)" stroke-width="2" opacity="0.6"/>
+    <line x1="850" y1="60" x2="1050" y2="100" stroke="url(#heroGrad)" stroke-width="2" opacity="0.6"/>
+    <line x1="850" y1="140" x2="1050" y2="100" stroke="url(#heroGrad)" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Nodos -->
+    <circle cx="150" cy="100" r="10" fill="#00E5FF"/>
+    <circle cx="350" cy="60" r="8" fill="#8B5CF6"/>
+    <circle cx="350" cy="140" r="8" fill="#8B5CF6"/>
+    <circle cx="600" cy="100" r="12" fill="#FF2BD6"/>
+    <circle cx="850" cy="60" r="8" fill="#8B5CF6"/>
+    <circle cx="850" cy="140" r="8" fill="#8B5CF6"/>
+    <circle cx="1050" cy="100" r="10" fill="#00E5FF"/>
+  </g>
+</svg>

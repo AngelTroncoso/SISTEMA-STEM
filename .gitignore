@@ -22,6 +22,9 @@ sample_data.csv
 .DS_Store
 .kiro/
 
+# Streamlit
+.streamlit/secrets.toml
+
 # IDE
 .vscode/
 .idea/
