@@ -25,10 +25,10 @@ def hero_banner():
                    background: linear-gradient(135deg, {COLORS['accent_cyan']}, {COLORS['accent_violet']}, {COLORS['accent_magenta']});
                    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
                    background-clip: text;">
-            SISTEMA-STEM
+            SISTEMA-STEAM
         </h1>
         <p style="font-size: 1.25rem; color: {COLORS['text_secondary']}; margin-top: 0;">
-            Analista Multiagente · Análisis de Datos desde 4 Perspectivas
+            Analista Multiagente · Análisis de Datos desde 5 Perspectivas
         </p>
     </div>
     """, unsafe_allow_html=True)

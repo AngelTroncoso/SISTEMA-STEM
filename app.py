@@ -11,7 +11,7 @@ from ui.theme import inject_css, get_plotly_template, AGENT_COLORS, COLORS
 from ui.components import hero_banner, agent_card, metric_card, section_title, badge, steps_guide
 
 st.set_page_config(
-    page_title="SISTEMA-STEM · Analista Multiagente",
+    page_title="SISTEMA-STEAM · Analista Multiagente",
     page_icon="🔬",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -30,7 +30,8 @@ if 'agent_status' not in st.session_state:
         'Tecnología': 'idle',
         'Matemáticas': 'idle',
         'Ciencia': 'idle',
-        'Ingeniería': 'idle'
+        'Ingeniería': 'idle',
+        'Arte': 'idle'
     }
 
 # Sidebar
@@ -85,7 +86,7 @@ if st.session_state.df is None:
                 f"font-family: Orbitron; margin: 3rem 0 2rem 0;'>Nuestros Agentes Especializados</h3>",
                 unsafe_allow_html=True)
     
-    cols = st.columns(4)
+    cols = st.columns(5)
     with cols[0]:
         agent_card("Ciencia", "science_icon.svg", "Formula y contrasta hipótesis científicas", "idle")
     with cols[1]:
@@ -94,6 +95,8 @@ if st.session_state.df is None:
         agent_card("Ingeniería", "eng_icon.svg", "Limpia datos y entrena modelos ML", "idle")
     with cols[3]:
         agent_card("Matemáticas", "math_icon.svg", "Análisis estadístico profundo", "idle")
+    with cols[4]:
+        agent_card("Arte", "art_icon.svg", "Visualización y storytelling de datos", "idle")
     
     # Guía de pasos
     steps_guide()
@@ -167,12 +170,13 @@ if st.session_state.df is not None:
         progress_bar = st.progress(0)
         
         with status_container:
-            cols = st.columns(4)
+            cols = st.columns(5)
             status_placeholders = {
                 'Tecnología': cols[0].empty(),
                 'Matemáticas': cols[1].empty(),
                 'Ciencia': cols[2].empty(),
-                'Ingeniería': cols[3].empty()
+                'Ingeniería': cols[3].empty(),
+                'Arte': cols[4].empty()
             }
         
         def update_status(agent_name, status):
@@ -181,23 +185,26 @@ if st.session_state.df is not None:
                 'Tecnología': 'tech_icon.svg',
                 'Matemáticas': 'math_icon.svg',
                 'Ciencia': 'science_icon.svg',
-                'Ingeniería': 'eng_icon.svg'
+                'Ingeniería': 'eng_icon.svg',
+                'Arte': 'art_icon.svg'
             }
             desc_map = {
                 'Tecnología': 'Calidad de datos',
                 'Matemáticas': 'Estadística',
                 'Ciencia': 'Hipótesis',
-                'Ingeniería': 'Modelado ML'
+                'Ingeniería': 'Modelado ML',
+                'Arte': 'Narrativa visual'
             }
-            with status_placeholders[agent_name]:
-                agent_card(agent_name, icon_map[agent_name], desc_map[agent_name], status)
+            if agent_name in status_placeholders:
+                with status_placeholders[agent_name]:
+                    agent_card(agent_name, icon_map[agent_name], desc_map[agent_name], status)
         
         def progress_callback(agent_name, current, total):
             update_status(agent_name, 'analyzing')
             progress = (current + 1) / total
             progress_bar.progress(progress)
         
-        with st.spinner("Analizando datos con agentes STEM..."):
+        with st.spinner("Analizando datos con agentes STEAM..."):
             results = orchestrator.run_analysis(df, target_col, progress_callback)
             
             # Mejorar resúmenes con IA si está disponible
@@ -234,7 +241,7 @@ if st.session_state.df is not None:
         
         section_title("📈 Resultados del Análisis", COLORS['accent_cyan'])
         
-        tabs = st.tabs(["🔬 Ciencia", "💻 Tecnología", "⚙️ Ingeniería", "📐 Matemáticas", "📋 Informe Final"])
+        tabs = st.tabs(["🔬 Ciencia", "💻 Tecnología", "⚙️ Ingeniería", "📐 Matemáticas", "🎨 Arte", "📋 Informe Final"])
         
         # Función auxiliar para mostrar resultados
         def show_agent_result(result, color):
@@ -314,9 +321,15 @@ if st.session_state.df is not None:
             if result:
                 show_agent_result(result, COLORS['accent_green'])
         
-        # Tab Informe Final
+        # Tab Arte
         with tabs[4]:
-            section_title("📋 Informe Ejecutivo STEM", COLORS['accent_cyan'])
+            result = results.get('Arte')
+            if result:
+                show_agent_result(result, '#FFA726')
+        
+        # Tab Informe Final
+        with tabs[5]:
+            section_title("📋 Informe Ejecutivo STEAM", COLORS['accent_cyan'])
             
             orchestrator = Orchestrator()
             report = orchestrator.generate_executive_report(results)

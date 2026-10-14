@@ -1,6 +1,6 @@
-# 🔬 SISTEMA-STEM · Analista Multiagente
+# 🔬 SISTEMA-STEAM · Analista Multiagente
 
-Sistema de análisis de datos con **interfaz futurista** y **4 agentes especializados** que evalúan datasets desde perspectivas complementarias: Ciencia, Tecnología, Ingeniería y Matemáticas.
+Sistema de análisis de datos con **interfaz futurista** y **5 agentes especializados** que evalúan datasets desde perspectivas complementarias: Ciencia, Tecnología, Ingeniería, Matemáticas y **Arte**.
 
 ## ⚡ Instalación
 
@@ -17,6 +17,7 @@ python generate_assets.py
 - **Agente Tecnología**: Evalúa calidad técnica, detecta nulos, duplicados y outliers
 - **Agente Matemáticas**: Estadística descriptiva, correlaciones, normalidad, ANOVA
 - **Agente Ingeniería**: Limpieza automática, modelo ML baseline y feature importance
+- **Agente Arte**: Visualizaciones artísticas, storytelling de datos y narrativa visual
 - **IA Generativa**: Integración opcional con **Gemini 3** para resúmenes mejorados
 
 ## 🔑 Variables de Entorno (Opcional)

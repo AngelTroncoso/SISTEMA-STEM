@@ -1,26 +1,28 @@
-"""Orquestador de agentes STEM."""
+"""Orquestador de agentes STEAM."""
 import pandas as pd
 from agents.base import AgentResult
 from agents.technology import TechnologyAgent
 from agents.math_agent import MathAgent
 from agents.science import ScienceAgent
 from agents.engineering import EngineeringAgent
+from agents.art import ArtAgent
 
 
 class Orchestrator:
-    """Coordina la ejecución de los 4 agentes STEM."""
+    """Coordina la ejecución de los 5 agentes STEAM."""
     
     def __init__(self):
         self.agents = [
             TechnologyAgent(),
             MathAgent(),
             ScienceAgent(),
-            EngineeringAgent()
+            EngineeringAgent(),
+            ArtAgent()
         ]
     
     def run_analysis(self, df: pd.DataFrame, target_col: str | None = None, progress_callback=None) -> dict[str, AgentResult]:
         """
-        Ejecuta los 4 agentes en orden y retorna los resultados.
+        Ejecuta los 5 agentes en orden y retorna los resultados.
         
         Args:
             df: DataFrame a analizar
@@ -83,7 +85,7 @@ class Orchestrator:
         key_findings = key_findings[:5]
         
         # Resumen general
-        summary = "Este análisis multiagente STEM evaluó los datos desde 4 perspectivas complementarias. "
+        summary = "Este análisis multiagente STEAM evaluó los datos desde 5 perspectivas complementarias. "
         
         tech_result = results.get('Tecnología')
         if tech_result and not tech_result.error:
@@ -101,7 +103,11 @@ class Orchestrator:
         
         eng_result = results.get('Ingeniería')
         if eng_result and not eng_result.error:
-            summary += "Se implementó limpieza de datos y un modelo baseline de machine learning."
+            summary += "Se implementó limpieza de datos y un modelo baseline de machine learning. "
+        
+        art_result = results.get('Arte')
+        if art_result and not art_result.error:
+            summary += "El análisis visual transformó los datos en narrativas artísticas."
         
         # Próximos pasos
         next_steps = [

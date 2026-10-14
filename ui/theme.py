@@ -25,6 +25,7 @@ AGENT_COLORS = {
     'Tecnología': COLORS['accent_cyan'],
     'Ingeniería': COLORS['accent_magenta'],
     'Matemáticas': COLORS['accent_green'],
+    'Arte': '#FFA726',  # Naranja artístico
 }
 
 AGENT_GLOWS = {
@@ -32,6 +33,7 @@ AGENT_GLOWS = {
     'Tecnología': COLORS['glow_cyan'],
     'Ingeniería': COLORS['glow_magenta'],
     'Matemáticas': COLORS['glow_green'],
+    'Arte': 'rgba(255, 167, 38, 0.4)',
 }
 
 
@@ -270,7 +272,7 @@ def get_plotly_template():
                 COLORS['accent_violet'],
                 COLORS['accent_magenta'],
                 COLORS['accent_green'],
-                '#FFA726',
+                '#FFA726',  # Naranja Arte
                 '#AB47BC'
             ]
         }

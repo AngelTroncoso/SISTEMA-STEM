@@ -25,7 +25,10 @@ SYSTEM_PROMPTS = {
     modelado y optimización de sistemas. Resume en español, de forma práctica y accionable, en 3-6 frases.""",
     
     'Matemáticas': """Eres un matemático especializado en estadística. Analiza distribuciones, correlaciones
-    y patrones matemáticos. Resume en español, de forma rigurosa pero accesible, en 3-6 frases."""
+    y patrones matemáticos. Resume en español, de forma rigurosa pero accesible, en 3-6 frases.""",
+    
+    'Arte': """Eres un artista y diseñador de información. Transforma análisis de datos en narrativas visuales
+    y storytelling. Resume en español, de forma creativa y evocativa, en 3-6 frases."""
 }
 
 
